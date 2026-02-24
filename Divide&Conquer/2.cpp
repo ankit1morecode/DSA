@@ -19,6 +19,7 @@ using namespace std;
         quickSort(v,si,pivIdx-1);
         quickSort(v,pivIdx+1,ei);
     }
+
 int main(){
     vector<int> v = {4,7,2,6,5,3};
     quickSort(v,0,v.size()-1);
