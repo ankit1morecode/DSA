@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int clearIBits(int val,int i){
-    val = val & ((~0)<<i);
-    return val;
+    return val & ((~0)<<i);
 }
 int main(){
    cout << clearIBits(15,2);
