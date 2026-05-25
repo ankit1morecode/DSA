@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node {
+class Node{
 public:
     int val;
     Node* left;
@@ -43,12 +43,11 @@ void levelOrder(Node* root){
         }
     }
 }
- 
-int main() {
+
+int main(){
     int idx = -1;
     vector<int> nodes = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
     Node* root = buildTree(nodes,idx);
-
     levelOrder(root);
     return 0;
 }

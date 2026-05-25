@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int binarySearch(vector<int> v,int st,int end,int target){
     if(st>end)return -1;
     int mid = st + (end-st)/2;
@@ -13,6 +14,7 @@ int binarySearch(vector<int> v,int st,int end,int target){
         return binarySearch(v,st,end,target);
     }
 }
+
 int main(){
     vector<int> v = {1,2,3,4,5,6,7};
     int st = 0;

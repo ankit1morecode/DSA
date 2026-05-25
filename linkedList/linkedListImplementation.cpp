@@ -30,6 +30,9 @@ public:
         }
         head=NULL;
     }
+
+    //pushback
+
     void push_back(int val){
         Node* newNode = new Node(val);
         if(head==NULL){
@@ -43,6 +46,9 @@ public:
         tail->next = newNode;
         tail = newNode;
     }
+
+    //pushfront
+
     void push_front(int val){
         Node* newNode = new Node(val);
         if(head==NULL){
@@ -52,12 +58,18 @@ public:
         newNode->next = head;
         head = newNode;
     }
+
+    //popfront
+
     void pop_front(){
         Node* temp = head;
         head = head->next;
         temp->next = NULL;
         delete temp;
     }
+
+    //popback
+
     void pop_back(){
     if(head == NULL)return;
     if(head == tail){
@@ -73,6 +85,9 @@ public:
     tail = temp;
     tail->next = NULL;
 }
+
+    //insert at pos
+
     void insert(int val,int pos){
         if(head==NULL){
             push_back(val);
@@ -92,6 +107,9 @@ public:
         temp->next = newNode;
         if(tnext)newNode->next = tnext;
     }
+
+    //search by value or key
+
     int searchKey(int key){
         Node* temp = head;
         int i=0;
@@ -100,7 +118,11 @@ public:
             temp = temp->next;
             i++;
         }
+        return -1;
     }
+
+    //recursively search
+
     int helper(int key,Node* temp){
         if(temp==NULL){
             return -1;
@@ -116,11 +138,12 @@ public:
         return helper(key,head);
     }
 
+    //reverse list
+
     void reverseList(){
         Node* prev = NULL;
         Node* curr = head;
         Node* nextNode = head->next;
-
         while(nextNode!=tail){
         curr = prev;
         prev = prev->next;
@@ -128,10 +151,13 @@ public:
         curr->next = nextNode;
         }
     }
+
+    //print LL
+
     void PrintLL(){
         Node* temp = head;
         while(temp!=NULL){
-            cout << temp->val << "--->";
+            cout << temp->val << "-->";
             temp = temp->next;
         }
         cout << "NULL" << endl;

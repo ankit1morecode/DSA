@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int gridWays(int row,int col,int n,int m,string ans){
     if(row==n-1 && col ==m-1){
         cout << ans << endl;
