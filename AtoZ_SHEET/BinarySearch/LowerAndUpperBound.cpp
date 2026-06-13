@@ -33,7 +33,6 @@ int upperBound(vector<int> nums,int n,int x){
     return idx;
 }
 
-
     vector<int> getFloorAndCeil(vector<int> nums, int x) {
         int n = nums.size();
         int lb = lower_bound(nums.begin(),nums.end(),x)-nums.begin();
@@ -42,6 +41,7 @@ int upperBound(vector<int> nums,int n,int x){
         int ceil  = (lb == n) ? -1 : nums[lb];
         return {nums[ub-1],nums[lb]};
     }
+    
 int main(){
     int n = 10;
     vector<int> arr = {1,2,3,3,7,8,9,9,9,11};
