@@ -11,9 +11,8 @@ int countSubarraysWithGivenXorK(int arr[],int n,int k){
         int fd = xr^k;
         if(m.find(fd)!=m.end()){
             cnt+=m[fd];
-        }else{
-            m[xr]++;
         }
+        m[xr]++;
     }
     return cnt;
 }
