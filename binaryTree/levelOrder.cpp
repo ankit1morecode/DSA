@@ -15,7 +15,7 @@ public:
 Node* buildTree(vector<int> nodes,int &idx){
     idx++;
     if(nodes[idx]==-1)return NULL;
-
+    
     Node* currNode = new Node(nodes[idx]);
 
     currNode->left = buildTree(nodes,idx);   //left subtree call.....
