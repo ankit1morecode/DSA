@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int lowerBound(int nums[],int n,int x){
+int lowerBound(vector<int> nums,int n,int x){
     int st = 0;
     int end = n-1;
     int idx = n;
@@ -17,7 +17,7 @@ int lowerBound(int nums[],int n,int x){
     return idx;
 }
 
-int upperBound(int nums[],int n,int x){
+int upperBound(vector<int> nums,int n,int x){
     int st = 0;
     int end = n-1;
     int idx = -1;
@@ -33,10 +33,21 @@ int upperBound(int nums[],int n,int x){
     return idx;
 }
 
+
+    vector<int> getFloorAndCeil(vector<int> nums, int x) {
+        int n = nums.size();
+        int lb = lower_bound(nums.begin(),nums.end(),x)-nums.begin();
+        int ub = upper_bound(nums.begin(),nums.end(),x)-nums.begin();
+        int floor = (ub == 0) ? -1 : nums[ub - 1];
+        int ceil  = (lb == n) ? -1 : nums[lb];
+        return {nums[ub-1],nums[lb]};
+    }
 int main(){
     int n = 10;
-    int arr[n] = {1,2,3,3,7,8,9,9,9,11};
+    vector<int> arr = {1,2,3,3,7,8,9,9,9,11};
     int x = 3;
-    cout << upperBound(arr,n,x);
+    cout << upperBound(arr,n,x) << endl;
+    vector<int> v = getFloorAndCeil(arr,x);
+    cout << v[0] << " " << v[1] << endl;
     return 0;
 }
